@@ -26,27 +26,27 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($movies as $post)
+                @foreach ($movies as $movie)
                     <tr>
-                        <th scope="row">{{ $post->id }}</th>
-                        <td>{{ $post->title }}</td>
+                        <th scope="row">{{ $movie->id }}</th>
+                        <td>{{ $movie->title }}</td>
                         <td>
-                            <img src="{{ Storage::url($post->poster) }}" width="60" alt="">
+                            <img src="{{ Storage::url($movie->poster) }}" width="60" alt="">
                         </td>
-                        <td>{{ $post->intro }}</td>
-                        <td>{{ $post->release_date }}</td>
-                        <td>{{ $post->genre->name }}</td>
+                        <td>{{ $movie->intro }}</td>
+                        <td>{{ $movie->release_date }}</td>
+                        <td>{{ $movie->genre->name }}</td>
                         <td>
-                            <div>
-                                <a href="{{ route('posts.edit', $post->id) }}" class="btn btn-primary">Edit</a>
+                            {{-- <div>
+                                <a href="{{ route('posts.edit', $movie->id) }}" class="btn btn-primary">Edit</a>
 
-                                <form action="{{ route('posts.destroy', $post->id) }}" method="post">
+                                <form action="{{ route('posts.destroy', $movie->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('Bạn có chắc chắn xóa không?')">Delete</button>
                                 </form>
-                            </div>
+                            </div> --}}
                         </td>
                     </tr>
                 @endforeach
