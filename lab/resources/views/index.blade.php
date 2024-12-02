@@ -14,14 +14,16 @@
                 <tr>
                     <th scope="col">#ID</th>
                     <th scope="col">Title</th>
-                    <th scope="col">Image</th>
-                    <th scope="col">Description</th>
-                    <th scope="col">View</th>
-                    <th scope="col">Category</th>
+                    <th scope="col">Poster</th>
+                    <th scope="col">Intro</th>
+                    <th scope="col">Release_date</th>
+                    <th scope="col">Genre_id</th>
                     <th scope="col">
-                        ssss
-                        {{-- <a href="{{ route('posts.create') }}" class="btn btn-primary">Create</a>
-                        <a href="{{ route('posts.trash') }}" class="btn btn-primary">Trash</a> --}}
+                        <a href="{{ route('create') }}" class="btn btn-primary">THeem </a>
+                    </th>
+                    <th>
+                        <a href="{{ route('movies.trash') }}" class="btn btn-primary">Login</a>
+
                     </th>
                 </tr>
             </thead>
@@ -37,16 +39,16 @@
                         <td>{{ $movie->release_date }}</td>
                         <td>{{ $movie->genre->name }}</td>
                         <td>
-                            {{-- <div>
-                                <a href="{{ route('posts.edit', $movie->id) }}" class="btn btn-primary">Edit</a>
+                            <div>
+                                <a href="{{ route('edit', ['movie' => $movie->id]) }}" class="btn btn-primary">Edit</a>
 
-                                <form action="{{ route('posts.destroy', $movie->id) }}" method="post">
+                                <form action="{{ route('movies.destroy', $movie->id) }}" method="post">
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit" class="btn btn-danger"
                                         onclick="return confirm('Bạn có chắc chắn xóa không?')">Delete</button>
                                 </form>
-                            </div> --}}
+                            </div>
                         </td>
                     </tr>
                 @endforeach

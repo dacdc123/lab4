@@ -14,39 +14,41 @@
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="">Category Name</label>
-                <select name="category_id" id="" class="form-control">
-                    @foreach ($categories as $cate)
-                        <option value="{{ $cate->id }}">
-                            {{ $cate->name }}
+                <label for="">Genes Name</label>
+                <select name="genre_id" id="" class="form-control">
+                    @foreach ($genres as $genre)
+                        <option value="{{ $genre->id }}">
+                            {{ $genre->name }}
                         </option>
                     @endforeach
                 </select>
             </div>
             <div class="mb-3">
-                <label for="">Image</label>
-                <input type="file" name="image" class="form-control">
-                @error('image')
+                <label for="">Poster</label>
+                <input type="file" name="poster"  class="form-control">
+                @error('poster')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
             <div class="mb-3">
-                <label for="">View</label>
-                <input type="number" name="view" value="{{ old('view') }}" class="form-control">
-                @error('view')
+                <label for="">release_date</label>
+                <input type="date" name="release_date" value="{{old('release_date')}}"  class="form-control">
+                @error('release_date')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
             </div>
+          
             <div class="mb-3">
-                <label for="">Description</label>
-                <textarea name="description" rows="5" class="form-control"></textarea>
-            </div>
-            <div class="mb-3">
-                <label for="">Content</label>
-                <textarea name="content" rows="8" class="form-control"></textarea>
+                <label for="">intro</label>
+                <textarea name="intro" rows="8"  value="{{ old('intro')}}" class="form-control"></textarea>
+                @error('intro')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
             <div class="mb-3">
                 <button type="submit" class="btn btn-primary">Create New</button>
+                <a href="{{ route('index') }}"  class="btn btn-info">Quay lại </a>
+                
             </div>
         </form>
     </div>
